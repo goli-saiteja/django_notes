@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
 
 def list(request):
-    return HttpResponse("You're looking at todo .")
+    return render(request,'todo/list.html')
 
 def detail(request, todo_id):
     return HttpResponse("You're looking at todo %s." % todo_id)
